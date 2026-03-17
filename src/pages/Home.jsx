@@ -24,19 +24,19 @@ const Home = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-amber-50 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+      <section className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-amber-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-slideUp">
             <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6">
-              <span className="block text-gray-900">Seasons of Code</span>
+              <span className="block text-gray-900 dark:text-white">Seasons of Code</span>
               <span className="block mt-2 gradient-text">SoC</span>
             </h1>
             
-            <p className="text-2xl sm:text-3xl font-semibold text-gray-700 mb-8">
-              Ask <span className="text-primary-600">|</span> Learn <span className="text-accent-500">|</span> Collaborate
+            <p className="text-2xl sm:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-8">
+              Ask <span className="text-primary-600 dark:text-primary-400">|</span> Learn <span className="text-accent-500 dark:text-accent-400">|</span> Collaborate
             </p>
 
-            <p className="text-lg sm:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
               A year-round coding program designed to help students collaborate on projects, compete in challenges, and grow as developers. Whether you're a beginner or experienced, there's something for everyone.
             </p>
 
@@ -50,7 +50,7 @@ const Home = () => {
               </Link>
               <Link
                 to="/seasons"
-                className="px-8 py-4 border-2 border-primary-600 text-primary-600 font-bold rounded-lg hover:bg-primary-50 transition-all duration-300"
+                className="px-8 py-4 border-2 border-primary-600 text-primary-600 dark:border-primary-400 dark:text-primary-400 font-bold rounded-lg hover:bg-primary-50 dark:hover:bg-gray-800 transition-all duration-300"
               >
                 Explore Seasons
               </Link>
@@ -59,7 +59,7 @@ const Home = () => {
 
           {/* Illustration placeholder */}
           <div className="animate-fadeIn" style={{ animationDelay: '0.3s' }}>
-            <div className="relative w-full max-w-lg mx-auto h-64 sm:h-80 bg-gradient-to-br from-primary-100 to-accent-100 rounded-2xl shadow-lg flex items-center justify-center">
+            <div className="relative w-full max-w-lg mx-auto h-64 sm:h-80 bg-gradient-to-br from-primary-100 to-accent-100 dark:from-gray-800 dark:to-gray-700 rounded-2xl shadow-lg flex items-center justify-center">
               <div className="text-6xl">💻</div>
             </div>
           </div>
@@ -67,13 +67,13 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16 animate-slideUp">
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
               What is <span className="gradient-text">Seasons of Code?</span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Seasons of Code (SoC) is a year-round initiative organized by the Competitive Coding and Programming Club (CcpC) to foster a culture of collaborative learning and competitive coding.
             </p>
           </div>
@@ -82,12 +82,12 @@ const Home = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="p-8 bg-gray-50 rounded-xl card-hover animate-slideUp"
+                className="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl card-hover animate-slideUp"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{feature.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -114,12 +114,12 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto text-center animate-slideUp">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Ready to Start Your Journey?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
             Register now and join a community of passionate coders. Spaces are limited!
           </p>
           <Link

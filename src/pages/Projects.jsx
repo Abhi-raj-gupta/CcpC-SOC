@@ -69,19 +69,19 @@ const Projects = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-purple-50 to-pink-50 py-20 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-900 dark:to-gray-800 py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center animate-slideUp">
-          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Amazing <span className="gradient-text">Projects</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Explore the incredible projects built by our community during Seasons of Code. From web apps to AI solutions, see what our talented developers have created.
           </p>
         </div>
       </section>
 
       {/* Category Filter */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white border-b border-gray-200">
+      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap gap-4 justify-center animate-slideUp">
             {categories.map((category, idx) => (
@@ -90,7 +90,7 @@ const Projects = () => {
                 className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
                   idx === 0
                     ? 'bg-gradient-to-r from-primary-600 to-accent-500 text-white shadow-lg'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                 }`}
               >
                 {category.name}
@@ -102,36 +102,36 @@ const Projects = () => {
       </section>
 
       {/* Projects Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, idx) => (
               <div
                 key={project.id}
-                className="bg-white rounded-xl overflow-hidden card-hover animate-slideUp shadow-md"
+                className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden card-hover animate-slideUp shadow-md"
                 style={{ animationDelay: `${(idx % 3) * 0.1}s` }}
               >
                 {/* Project Image/Icon */}
-                <div className="h-48 bg-gradient-to-br from-primary-100 to-accent-100 flex items-center justify-center text-7xl">
+                <div className="h-48 bg-gradient-to-br from-primary-100 to-accent-100 dark:from-gray-700 dark:to-gray-600 flex items-center justify-center text-7xl">
                   {project.image}
                 </div>
 
                 {/* Project Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
                   
-                  <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-2">
                     {project.description}
                   </p>
 
                   {/* Tech Stack */}
                   <div className="mb-4">
-                    <p className="text-xs font-semibold text-gray-700 mb-2 uppercase">Tech Stack</p>
+                    <p className="text-xs font-semibold text-gray-700 dark:text-gray-400 mb-2 uppercase">Tech Stack</p>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 bg-primary-100 text-primary-700 text-xs rounded-full font-medium"
+                          className="px-3 py-1 bg-primary-100 dark:bg-gray-700 text-primary-700 dark:text-primary-400 text-xs rounded-full font-medium"
                         >
                           {tech}
                         </span>
@@ -140,14 +140,14 @@ const Projects = () => {
                   </div>
 
                   {/* Team */}
-                  <div className="mb-4 pb-4 border-b border-gray-200">
-                    <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <div className="mb-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+                    <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
                       <Users className="w-4 h-4" />
                       <span className="font-medium">{project.team.length} Members</span>
                     </div>
                     <div className="mt-2 flex flex-wrap gap-2">
                       {project.team.map((member, idx) => (
-                        <span key={idx} className="text-xs text-gray-500">
+                        <span key={idx} className="text-xs text-gray-500 dark:text-gray-500">
                           {idx > 0 && '·'} {member}
                         </span>
                       ))}
@@ -156,18 +156,18 @@ const Projects = () => {
 
                   {/* Season Badge */}
                   <div className="mb-6">
-                    <span className="inline-block px-3 py-1 bg-gradient-to-r from-primary-100 to-accent-100 text-primary-700 text-xs font-semibold rounded-full">
+                    <span className="inline-block px-3 py-1 bg-gradient-to-r from-primary-100 to-accent-100 dark:from-gray-700 dark:to-gray-600 text-primary-700 dark:text-primary-400 text-xs font-semibold rounded-full">
                       {project.season}
                     </span>
                   </div>
 
                   {/* Actions */}
                   <div className="flex gap-3">
-                    <button className="flex-1 py-2 bg-primary-50 text-primary-600 font-semibold rounded-lg hover:bg-primary-100 transition-colors flex items-center justify-center space-x-2">
+                    <button className="flex-1 py-2 bg-primary-50 dark:bg-gray-700 text-primary-600 dark:text-primary-400 font-semibold rounded-lg hover:bg-primary-100 dark:hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2">
                       <ExternalLink className="w-4 h-4" />
                       <span>View</span>
                     </button>
-                    <button className="flex-1 py-2 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center space-x-2">
+                    <button className="flex-1 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 font-semibold rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2">
                       <Github className="w-4 h-4" />
                       <span>Code</span>
                     </button>
@@ -199,12 +199,12 @@ const Projects = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto text-center animate-slideUp">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
             Have an Awesome Project Idea?
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
             Join our next season and bring your ideas to life with a team of passionate developers.
           </p>
           <button className="px-10 py-4 bg-gradient-to-r from-primary-600 to-accent-500 text-white font-bold rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">

@@ -85,31 +85,31 @@ const Contact = () => {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-indigo-50 to-cyan-50 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-gradient-to-br from-indigo-50 to-cyan-50 dark:from-gray-900 dark:to-gray-800 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center animate-slideUp">
-          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-6">
+          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             Get in <span className="gradient-text">Touch</span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
             Have questions? We'd love to hear from you. Drop us a message and we'll get back to you as soon as possible.
           </p>
         </div>
       </section>
 
       {/* Contact Info Cards */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactInfo.map((info, idx) => (
               <a
                 key={idx}
                 href={info.link}
-                className="p-8 bg-gray-50 rounded-xl card-hover animate-slideUp text-center"
+                className="p-8 bg-gray-50 dark:bg-gray-800 rounded-xl card-hover animate-slideUp text-center"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
                 <div className="flex justify-center mb-4">{info.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{info.title}</h3>
-                <p className="text-gray-600 hover:text-primary-600 transition-colors">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{info.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                   {info.content}
                 </p>
               </a>
@@ -119,20 +119,20 @@ const Contact = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8 sm:p-12 animate-slideUp">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">Send us a Message</h2>
-            <p className="text-center text-gray-600 mb-8">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-8 sm:p-12 animate-slideUp">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 text-center">Send us a Message</h2>
+            <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
               We typically respond within 24 hours
             </p>
 
             {submitted && (
-              <div className="mb-8 p-6 bg-green-50 border-2 border-green-200 rounded-xl flex items-start space-x-4 animate-slideUp">
-                <CheckCircle className="w-8 h-8 text-green-600 flex-shrink-0 mt-1" />
+              <div className="mb-8 p-6 bg-green-50 dark:bg-green-900/20 border-2 border-green-200 dark:border-green-800 rounded-xl flex items-start space-x-4 animate-slideUp">
+                <CheckCircle className="w-8 h-8 text-green-600 dark:text-green-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="font-bold text-green-900 mb-2">Message Sent!</h3>
-                  <p className="text-green-800">Thank you for reaching out. We'll get back to you soon!</p>
+                  <h3 className="font-bold text-green-900 dark:text-green-300 mb-2">Message Sent!</h3>
+                  <p className="text-green-800 dark:text-green-400">Thank you for reaching out. We'll get back to you soon!</p>
                 </div>
               </div>
             )}
@@ -140,7 +140,7 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div className="animate-slideUp" style={{ animationDelay: '0.1s' }}>
-                <label className="block text-sm font-bold text-gray-900 mb-3">Your Name *</label>
+                <label className="block text-sm font-bold text-gray-900 dark:text-white mb-3">Your Name *</label>
                 <input
                   type="text"
                   name="name"
@@ -148,13 +148,13 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="John Doe"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
+                  className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
                 />
               </div>
 
               {/* Email */}
               <div className="animate-slideUp" style={{ animationDelay: '0.15s' }}>
-                <label className="block text-sm font-bold text-gray-900 mb-3">Email Address *</label>
+                <label className="block text-sm font-bold text-gray-900 dark:text-white mb-3">Email Address *</label>
                 <input
                   type="email"
                   name="email"
@@ -162,13 +162,13 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="john@example.com"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
+                  className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
                 />
               </div>
 
               {/* Subject */}
               <div className="animate-slideUp" style={{ animationDelay: '0.2s' }}>
-                <label className="block text-sm font-bold text-gray-900 mb-3">Subject *</label>
+                <label className="block text-sm font-bold text-gray-900 dark:text-white mb-3">Subject *</label>
                 <input
                   type="text"
                   name="subject"
@@ -176,13 +176,13 @@ const Contact = () => {
                   onChange={handleInputChange}
                   required
                   placeholder="How can we help?"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
+                  className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none focus:border-primary-600 transition-colors"
                 />
               </div>
 
               {/* Message */}
               <div className="animate-slideUp" style={{ animationDelay: '0.25s' }}>
-                <label className="block text-sm font-bold text-gray-900 mb-3">Message *</label>
+                <label className="block text-sm font-bold text-gray-900 dark:text-white mb-3">Message *</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -190,7 +190,7 @@ const Contact = () => {
                   required
                   placeholder="Tell us more about your inquiry..."
                   rows="6"
-                  className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary-600 transition-colors resize-none"
+                  className="w-full px-4 py-3 border-2 border-gray-300 dark:border-gray-700 dark:bg-gray-700 dark:text-white rounded-lg focus:outline-none focus:border-primary-600 transition-colors resize-none"
                 />
               </div>
 
@@ -210,13 +210,13 @@ const Contact = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-slideUp">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-400">
               Find answers to common questions about Seasons of Code
             </p>
           </div>
@@ -225,15 +225,15 @@ const Contact = () => {
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="p-6 bg-gray-50 rounded-xl border-2 border-gray-200 hover:border-primary-600 transition-colors animate-slideUp"
+                className="p-6 bg-gray-50 dark:bg-gray-800 rounded-xl border-2 border-gray-200 dark:border-gray-700 hover:border-primary-600 dark:hover:border-primary-500 transition-colors animate-slideUp"
                 style={{ animationDelay: `${idx * 0.05}s` }}
               >
                 <details className="group cursor-pointer">
-                  <summary className="flex items-center justify-between font-bold text-gray-900 hover:text-primary-600 transition-colors">
+                  <summary className="flex items-center justify-between font-bold text-gray-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
                     <span>{faq.question}</span>
                     <span className="text-xl group-open:rotate-180 transition-transform">▶</span>
                   </summary>
-                  <p className="mt-4 text-gray-600 leading-relaxed">
+                  <p className="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
                     {faq.answer}
                   </p>
                 </details>
